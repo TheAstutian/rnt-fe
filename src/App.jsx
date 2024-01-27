@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 import Register from "./pages/Register"; 
 import './style.scss';
 
-export const API_URL = 'https://rnt-api.onrender.com'
+export const API_URL = 'https://app-019a69e1-fff7-4eee-816c-52fcf0097ff0.cleverapps.io'
 
 const Layout =()=>{
   return (

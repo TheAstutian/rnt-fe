@@ -538,7 +538,8 @@ $heady: /*#4fc4cf;/#0e172c*/ #02075d;
             margin-top:20px;
             display: flex;
             gap:20px;
-
+            padding-left:50px;
+            padding-right:50px;
             @media only screen and (max-width: 767px){
                 display: flex;
                 flex-direction:column;
