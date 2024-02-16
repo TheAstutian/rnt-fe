@@ -29,6 +29,7 @@ const Single = () => {
       try{
         const res= await axios.get(`${API_URL}/api/posts/${postId}`)
         setPost(res.data)
+        console.log(res.data)
         window.scrollTo(0, 0)
       }catch(err){
         console.log(err)
@@ -55,11 +56,12 @@ const Single = () => {
   return (
     <div className='single'>
       <div className="content">
-        <img src={post.img? `../../uploads/${post.img}`: null} alt='' />
-       
+        <img src={post.img? `${post.img}`: null} alt='' />
+        
         <div className="user">
           {post.userImg&&<img src={post.userImg} alt=''/>}
-        
+
+      
         <div className="info">
           <span>By {post.username}</span>
           <p>Posted {moment(post.date).fromNow()} in <b>{post.cat}</b></p>

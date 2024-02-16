@@ -5,7 +5,7 @@ import axios from 'axios';
 import moment from 'moment';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/authContext';
-import { API_URL } from '../App';
+import { API_URL, API_KEY } from '../App';
 
 const Write = () => {
   const state = useLocation().state
@@ -41,10 +41,11 @@ const upload= async ()=>{
     {return null
     } else if(file.name){
       const formData = new FormData();
-      formData.append("file",file)
-      const res = await axios.post(`${API_URL}/api/upload`, formData)
-      console.log("upload response ", res)
-      return res.data  
+      formData.set('key', API_KEY)
+      formData.append("image",file)
+      const res = await axios.post('https://api.imgbb.com/1/upload', formData)
+      console.log("upload response ", res.data.data.image.url)
+      return res.data.data.image.url
     }
     else return null
   }catch(err){
@@ -74,6 +75,7 @@ const handleClick = async e=>{
   } else {
     
     const imgUrl = await upload()
+    
     await axios.post(`${API_URL}/api/posts/`, {
       title,
       desc:value,

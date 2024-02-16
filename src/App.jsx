@@ -15,7 +15,9 @@ import Footer from './components/Footer';
 import Register from "./pages/Register"; 
 import './style.scss';
 
-export const API_URL = 'https://app-019a69e1-fff7-4eee-816c-52fcf0097ff0.cleverapps.io'
+export const API_URL1 = 'https://app-019a69e1-fff7-4eee-816c-52fcf0097ff0.cleverapps.io'
+export const API_URL = 'http://localhost:8080';
+export const API_KEY = 'f2009b910b271d1f147d2cb091fbe166'
 
 const Layout =()=>{
   return (
