@@ -9,7 +9,7 @@ import { API_URL, API_KEY } from '../App';
 
 const Write = () => {
   const state = useLocation().state
-  const [value, setValue] = useState(state?.desc ||'');
+  const [value, setValue] = useState(state?.body ||'');
   const [title, setTitle] = useState(state?.title ||'');
   const [file, setFile] = useState(state?.img||null);
   const [cat, setCat] = useState(state?.cat ||"");
@@ -20,6 +20,7 @@ const Write = () => {
   useEffect(()=>{
     
     console.log('useEffect file ', file)
+    
 
     const updateImage = async()=>{
       if (state){
